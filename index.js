@@ -3,6 +3,12 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const run = require("./dbConnection");
+const loginRouter = require("./routes/loginRoute");
+const registrationRoute = require("./routes/registrationRoute");
+const homeRoute = require("./routes/homeDataRoute");
+const projectRouter = require("./routes/projectRoute");
+const technologyRoutes = require("./routes/technologyRoute");
+const contactRoute = require("./routes/contactInformationRoute");
 
 app.use(
   cors({
@@ -14,5 +20,11 @@ run.main().catch(console.error);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use("/Images", express.static("Images"));
+app.use("/auth", loginRouter);
+app.use("/auth", registrationRoute);
+app.use("/home", homeRoute);
+app.use("/project", projectRouter);
+app.use("/technology", technologyRoutes);
+app.use("/contact", contactRoute);
 const PORT = process.env.PORT || 4111;
 app.listen(PORT, console.log("Server don start for port: " + PORT));

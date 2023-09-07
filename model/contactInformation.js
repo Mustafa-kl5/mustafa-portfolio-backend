@@ -1,9 +1,13 @@
 const mongoose = require("mongoose");
 
 const contactInformationSchema = new mongoose.Schema({
-  userName: { type: String, require: true },
-  technologyUsed: { type: String, require: true },
-  description: { type: String, require: true },
+  email: { type: String, require: true, default: "" },
+  phoneNumber: { type: String, require: true, default: "" },
+  contactMessage: { type: String, require: true, default: "" },
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
+  },
 });
 const contactInformation = mongoose.model(
   "contact Information",

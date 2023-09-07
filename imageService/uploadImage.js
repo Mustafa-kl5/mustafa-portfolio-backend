@@ -1,6 +1,6 @@
 const fs = require("fs");
 const mongoose = require("mongoose");
-const imageSchema = require("../models/image");
+const imageSchema = require("../model/image");
 const imageModel = mongoose.model("images", imageSchema);
 
 const uploadImage = async (images, Category) => {

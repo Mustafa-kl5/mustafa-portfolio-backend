@@ -5,7 +5,12 @@ const projectSchema = new mongoose.Schema({
   projectName: { type: String },
   description: { type: String },
   technologyUsed: { type: String },
+  projectLink: { type: String },
   images: [image],
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
+  },
 });
 const project = mongoose.model("projects", projectSchema);
 
