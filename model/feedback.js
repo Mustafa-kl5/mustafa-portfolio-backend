@@ -1,9 +1,14 @@
 const mongoose = require("mongoose");
 
 const feedbackSchema = new mongoose.Schema({
-  userName: { type: String, require: true },
-  technologyUsed: { type: String, require: true },
-  description: { type: String, require: true },
+  name: { type: String, require: true },
+  feedBackMessage: { type: String, require: true },
+  email: { type: String, require: true },
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
+  },
 });
-module.exports = feedbackSchema;
-// const feedback = mongoose.model("feedbacks", feedbackSchema);
+
+const feedback = mongoose.model("feedbacks", feedbackSchema);
+module.exports = feedback;

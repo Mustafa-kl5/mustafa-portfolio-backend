@@ -9,10 +9,16 @@ const homeRoute = require("./routes/homeDataRoute");
 const projectRouter = require("./routes/projectRoute");
 const technologyRoutes = require("./routes/technologyRoute");
 const contactRoute = require("./routes/contactInformationRoute");
+const portfolioRoute = require("./routes/portfolioRoute");
+const FeedBackRoute = require("./routes/feedBackRoute");
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "http://192.168.8.146:3001",
+    ],
   })
 );
 
@@ -26,5 +32,7 @@ app.use("/home", homeRoute);
 app.use("/project", projectRouter);
 app.use("/technology", technologyRoutes);
 app.use("/contact", contactRoute);
+app.use("/feedBack", FeedBackRoute);
+app.use("/api/v1/data", portfolioRoute);
 const PORT = process.env.PORT || 4111;
 app.listen(PORT, console.log("Server don start for port: " + PORT));

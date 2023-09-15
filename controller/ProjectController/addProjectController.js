@@ -7,6 +7,7 @@ const addProjectController = async (req, res) => {
     projectLink,
     projectTechnology,
     projectImages,
+    projectGithubRepo,
   } = req.body;
   try {
     const { userId } = req.user;
@@ -17,6 +18,7 @@ const addProjectController = async (req, res) => {
       projectLink: projectLink,
       images: projectImage,
       technologyUsed: projectTechnology,
+      projectGithubRepo: projectGithubRepo,
       author: userId,
     });
     await project.save();

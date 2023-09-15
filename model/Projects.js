@@ -6,6 +6,7 @@ const projectSchema = new mongoose.Schema({
   description: { type: String },
   technologyUsed: { type: String },
   projectLink: { type: String },
+  projectGithubRepo: { type: String },
   images: [image],
   author: {
     type: mongoose.Schema.Types.ObjectId,

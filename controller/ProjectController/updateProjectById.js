@@ -1,14 +1,20 @@
 const Project = require("../../model/Projects");
 const updateProjectByIdController = async (req, res) => {
   const projectId = req.params.projectId.replace(/:/g, "");
-  const { projectName, projectDescription, projectLink, technologyUsed } =
-    req.body;
+  const {
+    projectName,
+    projectDescription,
+    projectLink,
+    technologyUsed,
+    projectGithubRepoLink,
+  } = req.body;
   try {
     const project = await Project.findById(projectId);
     project.projectName = projectName;
     project.description = projectDescription;
     project.projectLink = projectLink;
     project.technologyUsed = technologyUsed;
+    project.projectGithubRepo = projectGithubRepoLink;
     await project.save();
     res.status(200).json({ project, message: "Project Updated Successfully" });
   } catch (error) {
