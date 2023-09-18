@@ -23,6 +23,7 @@ const uploadImage = async (images, Category) => {
       });
       await imagePost.save();
       Images.push(imagePost);
+      console.log("hi");
     } catch (error) {
       console.error(error);
     }

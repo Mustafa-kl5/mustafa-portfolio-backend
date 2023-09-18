@@ -14,7 +14,11 @@ const FeedBackRoute = require("./routes/feedBackRoute");
 
 app.use(
   cors({
-    origin: ["https://portfolioadminpanel.onrender.com"],
+    origin: [
+      "https://portfolioadminpanel.onrender.com",
+      "http://localhost:3001",
+      "http://localhost:3000",
+    ],
   })
 );
 
