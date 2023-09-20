@@ -16,6 +16,7 @@ app.use(
   cors({
     origin: [
       "https://mustafa-portfolio-admin-panel.vercel.app",
+      "https://mustafa-portfolio-iota.vercel.app",
       "http://localhost:3001",
       "http://localhost:3000",
     ],
