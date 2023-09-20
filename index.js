@@ -35,7 +35,7 @@ app.use("/technology", technologyRoutes);
 app.use("/contact", contactRoute);
 app.use("/feedBack", FeedBackRoute);
 app.use("/api/v1/data", portfolioRoute);
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hey this is my API running 🥳");
 });
 const PORT = process.env.PORT || 4111;
