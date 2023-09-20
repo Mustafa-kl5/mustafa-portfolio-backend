@@ -11,7 +11,7 @@ const upLoadSingleImage = async (image) => {
 
   try {
     await fs.promises.writeFile(filepath, base64Data, "base64");
-    const imageURL = `mustafa-portfolio-wf6f-git-main-mustafa-s-projects.vercel.app/${filepath}`;
+    const imageURL = `https://mustafa-portfolio-wf6f.vercel.app/${filepath}`;
     console.log("hi");
     return imageURL;
   } catch (error) {
