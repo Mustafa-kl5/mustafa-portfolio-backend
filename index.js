@@ -15,7 +15,7 @@ const FeedBackRoute = require("./routes/feedBackRoute");
 app.use(
   cors({
     origin: [
-      "https://portfolioadminpanel.onrender.com",
+      "https://mustafa-portfolio-admin-panel.vercel.app",
       "http://localhost:3001",
       "http://localhost:3000",
     ],
