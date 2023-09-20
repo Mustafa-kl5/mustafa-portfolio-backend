@@ -21,6 +21,7 @@ const uploadImage = async (images, Category) => {
       const imagePost = new imageModel({
         fileName: imageURL,
       });
+      console.log(imageURL);
       await imagePost.save();
       Images.push(imagePost);
     } catch (error) {
