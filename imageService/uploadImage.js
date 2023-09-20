@@ -17,7 +17,7 @@ const uploadImage = async (images, Category) => {
 
     try {
       await fs.promises.writeFile(filepath, base64Data, "base64");
-      const imageURL = `https://portfoliosre.onrender.com/Images/${filepath}`;
+      const imageURL = `https://portfoliosre.onrender.com/${filepath}`;
       const imagePost = new imageModel({
         fileName: imageURL,
       });
