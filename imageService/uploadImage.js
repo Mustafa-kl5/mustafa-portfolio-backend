@@ -17,13 +17,12 @@ const uploadImage = async (images, Category) => {
 
     try {
       await fs.promises.writeFile(filepath, base64Data, "base64");
-      const imageURL = `https://portfoliosre.onrender.com/${filepath}`;
+      const imageURL = `https://portfoliosre.onrender.com/Images/${filepath}`;
       const imagePost = new imageModel({
         fileName: imageURL,
       });
       await imagePost.save();
       Images.push(imagePost);
-      console.log("hi");
     } catch (error) {
       console.error(error);
     }
