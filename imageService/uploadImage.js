@@ -18,6 +18,7 @@ const uploadImage = async (images, Category) => {
       Images.push(imageURL);
     } catch (error) {
       console.error(error);
+      console.log(error);
     }
   }
 
