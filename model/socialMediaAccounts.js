@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const image = require("./image");
+
 const socialMediaAccountsSchema = new mongoose.Schema({
-  image: { type: image },
+  image: { type: String },
   socialMediaAccountURl: { type: String },
   author: {
     type: mongoose.Schema.Types.ObjectId,
