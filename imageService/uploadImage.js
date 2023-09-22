@@ -1,7 +1,4 @@
 const fs = require("fs");
-const mongoose = require("mongoose");
-const imageSchema = require("../model/image");
-const imageModel = mongoose.model("images", imageSchema);
 
 const uploadImage = async (images, Category) => {
   const Images = [];
@@ -17,13 +14,8 @@ const uploadImage = async (images, Category) => {
 
     try {
       await fs.promises.writeFile(filepath, base64Data, "base64");
-      const imageURL = `https://mustafa-portfolio-wf6f.vercel.app/${filepath}`;
-      const imagePost = new imageModel({
-        fileName: imageURL,
-      });
-      console.log(imageURL);
-      await imagePost.save();
-      Images.push(imagePost);
+      const imageURL = `https://portfoliosre.onrender.com/${filepath}`;
+      Images.push(imageURL);
     } catch (error) {
       console.error(error);
     }

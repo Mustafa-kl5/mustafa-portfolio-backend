@@ -11,11 +11,10 @@ const upLoadSingleImage = async (image) => {
 
   try {
     await fs.promises.writeFile(filepath, base64Data, "base64");
-    const imageURL = `https://mustafa-portfolio-wf6f.vercel.app/${filepath}`;
-    console.log("hi");
+    const imageURL = `https://portfoliosre.onrender.com/${filepath}`;
     return imageURL;
   } catch (error) {
-    throw error;
+    console.error(error);
   }
 };
 
