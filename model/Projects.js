@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const image = require("./image");
 
 const projectSchema = new mongoose.Schema({
   projectName: { type: String },
@@ -7,7 +6,7 @@ const projectSchema = new mongoose.Schema({
   technologyUsed: { type: String },
   projectLink: { type: String },
   projectGithubRepo: { type: String },
-  images: [image],
+  images: [String],
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
