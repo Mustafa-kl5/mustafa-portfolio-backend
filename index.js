@@ -37,6 +37,7 @@ app.use("/feedBack", FeedBackRoute);
 app.use("/api/v1/data", portfolioRoute);
 app.get("/", (req, res) => {
   res.send("server is active");
+  console.log("server active");
 });
 const PORT = process.env.PORT || 4111;
 app.listen(PORT, console.log("Server don start for port: " + PORT));
