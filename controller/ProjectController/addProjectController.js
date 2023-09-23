@@ -11,7 +11,7 @@ const addProjectController = async (req, res) => {
   } = req.body;
   try {
     const { userId } = req.user;
-    const projectImage = await uploadImage(projectImages, "projects");
+    const projectImage = await uploadImage(projectImages);
     const project = await new Project({
       projectName: projectName,
       description: projectDescription,

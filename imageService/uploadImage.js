@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const uploadImage = async (images, Category) => {
+const uploadImage = async (images) => {
   const Images = [];
 
   for (const image of images) {
@@ -9,7 +9,7 @@ const uploadImage = async (images, Category) => {
     const filename = `image${
       Math.floor(Math.random() * 900000) + 100000
     }.${imageType}`;
-    const filepath = `Images/${Category}/${filename}`;
+    const filepath = `Images/${filename}`;
     const base64Data = image.replace(/^data:image\/\w+;base64,/, "");
 
     try {
